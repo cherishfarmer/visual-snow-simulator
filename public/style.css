@@ -1,0 +1,13 @@
+.vs-title {
+    text-align: center;
+}
+
+.image-comparison-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+}
+
+.choose-image {
+    display: grid;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Visual Snow Simulator</title>
+</head>
+<body>
+    <!--Page Title-->
+    <h1 class="vs-title">Visual Snow Simulator</h1>
+
+    <!--Description of Visual Snow-->
+    <p>Here is some information about Visual Snow!</p>
+
+    <!--Layout for images-->
+    <canvas id="originalCanvas"></canvas>
+    <canvas id="simulatedCanvas"></canvas>
+
+    <!--File upload-->
+    <form method="POST" enctype="multipart/form-data">
+        <div class="choose-image">
+            <label for="imageUpload">Choose image to simulate:</label>
+            <input type="file" id="imageUpload" name="originalPicture" accept="image/png, image/jpeg, image/jpg">
+        </div>
+    </form>
+
+    <!--Visual Snow settings-->
+
+</body>
+</html>
