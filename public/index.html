@@ -13,19 +13,37 @@
     <!--Description of Visual Snow-->
     <p>Here is some information about Visual Snow!</p>
 
-    <!--Layout for images-->
-    <canvas id="originalCanvas"></canvas>
-    <canvas id="simulatedCanvas"></canvas>
+    <div class="image-comparison-layout">
+        <!--Layout for images-->
+        <img id="originalPreview" class="image-preview" width="500" height="500">
+        <canvas id="simulatedPreview" class="image-preview" width="500" height="500"></canvas>
+    </div>
 
     <!--File upload-->
     <form method="POST" enctype="multipart/form-data">
         <div class="choose-image">
             <label for="imageUpload">Choose image to simulate:</label>
-            <input type="file" id="imageUpload" name="originalPicture" accept="image/png, image/jpeg, image/jpg">
+            <input type="file" id="imageUpload" name="originalPicture" accept="image/*">
         </div>
     </form>
 
     <!--Visual Snow settings-->
+    <div class="vs-settings">
+        <label for="densitySetting">Density:</label>
+        <input type="range" id="densitySetting" min="0" max="100" value="50">
+
+        <label for="speedSetting">Speed:</label>
+        <input type="range" id="speedSetting" min="0" max="100" value="50">
+
+        <label for="sizeSetting">Size:</label>
+        <input type="range" id="sizeSetting" min="0" max="10" value="1">
+
+        <label for="colorSetting">Color:</label>
+        <input type="range" id="colorSetting" min="1" max="10" value="1">
+    </div>
+
+    <!-- File upload script-->
+    <script src="image-display.js"></script>
 
 </body>
 </html>

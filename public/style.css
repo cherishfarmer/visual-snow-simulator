@@ -8,6 +8,11 @@
     position: relative;
 }
 
+.image-preview {
+    width: 50%;
+    height: auto;
+}
+
 .choose-image {
     display: grid;
 }
