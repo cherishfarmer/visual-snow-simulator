@@ -6,6 +6,9 @@
 
 html {
     font-family: "Poppins", sans-serif;
+    background: white;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .vs-title {
@@ -16,6 +19,7 @@ html {
     margin-left: -8px;
     margin-right: -8px;
     margin-top: -8px;
+    transition: color 0.3s ease;
 }
 
 .vs-info-border {
@@ -30,6 +34,7 @@ html {
     margin: 0;
     padding: 1em;
     border-radius: 0.3em;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .image-comparison-layout {
@@ -59,6 +64,11 @@ html {
 .vsi {
     text-decoration: none;
     color: black;
+    transition: color 0.3s ease;
+}
+
+.dark-mode-background .vsi {
+    color: white;
 }
 
 .vsi:hover {
@@ -78,5 +88,37 @@ input[type='range'] {
 
 footer p {
     justify-self: center;
+}
+
+.dark-mode-text {
+    color: white;
+}
+
+.dark-mode-title {
+    color: black;
+}
+
+.dark-mode-background {
+    background: black;
+}
+
+.display-button {
+    border: none;
+    padding: 0;
+    background: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.display-button img {
+    height: 2.5em;
+    width: auto;
+}
+
+.display-button:hover {
+    cursor: pointer;
+}
+
+label, span, h3, p, strong, em {
+    transition: color 0.3s ease;
 }
 
