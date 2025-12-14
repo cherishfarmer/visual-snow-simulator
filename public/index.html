@@ -4,46 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="vss-favicon.png">
     <title>Visual Snow Simulator</title>
 </head>
 <body>
-    <!--Page Title-->
-    <h1 class="vs-title">Visual Snow Simulator</h1>
+<!--Page Title-->
+<h1 class="vs-title">Visual Snow Simulator</h1>
 
-    <!--Description of Visual Snow-->
-    <p>Here is some information about Visual Snow!</p>
+<!--Description of Visual Snow-->
+<div class="vs-info-border">
+    <div class="vs-info">
+        <p><strong>What is Visual Snow Syndrome?</strong></p>
+        <p>Visual Snow Syndrome (VSS) is a neurological condition characterized by persistent flickering dots that mimic old TV static.
+            The condition is accompanied by other perceptual disturbances such as afterimages, light sensitivity, and night vision problems, and can range from mild to debilitating.
+            VSS is not well understood, and it's estimated that 2-3% of the population is affected by it.
+            <a class="vsi" href="https://www.visualsnowinitiative.org/" target="_blank" rel="noopener noreferrer">Learn more at the Visual Snow Initiative.</a></p>
+        <p><em>Use the simulator below to see what visual snow might look like. Adjust the settings to match different severities.</em></p>
+    </div>
+</div>
 
-    <div class="image-comparison-layout">
-        <!--Layout for images-->
-        <img id="originalPreview" class="image-preview" width="500" height="500">
+<!--File upload-->
+<form method="POST" enctype="multipart/form-data">
+    <div class="choose-image">
+        <label for="imageUpload">Choose an image to simulate:</label>
+        <input type="file" id="imageUpload" name="originalPicture" accept="image/*">
+    </div>
+</form>
+
+<div class="top-bar"></div>
+
+<!--Visual Snow settings-->
+<div class="vs-settings">
+    <h3 style="margin-bottom: 10px;">Adjust Visual Snow Settings:</h3>
+
+    <label for="densitySetting">Density:</label>
+    <input type="range" id="densitySetting" min="0" max="100" value="50">
+    <span id="densityValue">50%</span>
+
+    <label for="speedSetting">Speed:</label>
+    <input type="range" id="speedSetting" min="0" max="100" value="50">
+    <span id="speedValue">50%</span>
+
+    <label for="sizeSetting">Size:</label>
+    <input type="range" id="sizeSetting" min="1" max="10" value="1">
+    <span id="sizeValue">1px</span>
+
+    <label for="colorSetting">Color:</label>
+    <input type="range" id="colorSetting" min="0" max="100" value="1">
+    <span id="colorValue">1%</span>
+</div>
+
+<div class="image-comparison-layout">
+    <!--Layout for images-->
+    <div style="display: inline-block; text-align: center; margin: 10px;">
+        <p id="originalLabel" style="margin-bottom: 10px; font-weight: bold;">Original</p>
+        <canvas id="originalPreview" class="image-preview" width="500" height="500"></canvas>
+    </div>
+    <div style="display: inline-block; text-align: center; margin: 10px;">
+        <p id="simulatedLabel" style="margin-bottom: 10px; font-weight: bold;">Simulated Visual Snow</p>
         <canvas id="simulatedPreview" class="image-preview" width="500" height="500"></canvas>
     </div>
+</div>
 
-    <!--File upload-->
-    <form method="POST" enctype="multipart/form-data">
-        <div class="choose-image">
-            <label for="imageUpload">Choose image to simulate:</label>
-            <input type="file" id="imageUpload" name="originalPicture" accept="image/*">
-        </div>
-    </form>
-
-    <!--Visual Snow settings-->
-    <div class="vs-settings">
-        <label for="densitySetting">Density:</label>
-        <input type="range" id="densitySetting" min="0" max="100" value="50">
-
-        <label for="speedSetting">Speed:</label>
-        <input type="range" id="speedSetting" min="0" max="100" value="50">
-
-        <label for="sizeSetting">Size:</label>
-        <input type="range" id="sizeSetting" min="0" max="10" value="1">
-
-        <label for="colorSetting">Color:</label>
-        <input type="range" id="colorSetting" min="1" max="10" value="1">
-    </div>
-
-    <!-- File upload script-->
-    <script src="image-display.js"></script>
+<!-- File upload script-->
+<script src="image-display.js"></script>
 
 </body>
+<footer>
+    <div class="top-bar"></div>
+    <p>© Cherish Farmer 2025</p>
+</footer>
 </html>

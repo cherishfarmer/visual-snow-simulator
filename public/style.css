@@ -1,18 +1,82 @@
+:root {
+    --blue: #2596be;
+    --blue-green: #30c1bc;
+    --green: #4cd79f;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
 .vs-title {
     text-align: center;
+    color: white;
+    background: linear-gradient(var(--blue), var(--green));
+    padding: 1em;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -8px;
+}
+
+.vs-info-border {
+    border-radius: 0.3em;
+    background: linear-gradient(var(--blue), var(--green));
+    padding: .5em;
+    margin: 1em;
+}
+
+.vs-info {
+    background: white;
+    margin: 0;
+    padding: 1em;
+    border-radius: 0.3em;
 }
 
 .image-comparison-layout {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: relative;
+    place-items: center;
 }
 
 .image-preview {
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
 .choose-image {
+    margin-top: 1em;
     display: grid;
+    margin-bottom: 1em;
+    justify-self: center;
 }
+
+.vs-settings {
+    margin-bottom: 1em;
+    justify-self: center;
+}
+
+.vsi {
+    text-decoration: none;
+    color: black;
+}
+
+.vsi:hover {
+    text-decoration: underline;
+    color: var(--blue-green);
+}
+
+input[type='range'] {
+    accent-color: var(--blue-green);
+}
+
+.top-bar {
+    margin-top: 1em;
+    border-bottom: .2em solid var(--blue-green);
+    width: 97.5%;
+}
+
+footer p {
+    justify-self: center;
+}
+
