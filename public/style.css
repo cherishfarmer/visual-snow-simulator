@@ -83,7 +83,7 @@ input[type='range'] {
 .top-bar {
     margin-top: 1em;
     border-bottom: .2em solid var(--blue-green);
-    width: 97.5%;
+    width: 100%;
 }
 
 footer p {
