@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,18 +8,20 @@
     <title>Visual Snow Simulator</title>
 </head>
 <body>
+
 <!--Page Title-->
-<h1 class="vs-title">Visual Snow Simulator</h1>
+<h1 id="vs-title" class="vs-title">Visual Snow Simulator</h1>
 
 <!--Description of Visual Snow-->
 <div class="vs-info-border">
-    <div class="vs-info">
+    <div id="vs-info" class="vs-info">
         <p><strong>What is Visual Snow Syndrome?</strong></p>
         <p>Visual Snow Syndrome (VSS) is a neurological condition characterized by persistent flickering dots that mimic old TV static.
             The condition is accompanied by other perceptual disturbances such as afterimages, light sensitivity, and night vision problems, and can range from mild to debilitating.
             VSS is not well understood, and it's estimated that 2-3% of the population is affected by it.
             <a class="vsi" href="https://www.visualsnowinitiative.org/" target="_blank" rel="noopener noreferrer">Learn more at the Visual Snow Initiative.</a></p>
         <p><em>Use the simulator below to see what visual snow might look like. Adjust the settings to match different severities.</em></p>
+        <button id="displayButton" class="display-button"><img id="displayButtonImage" src="https://img.icons8.com/?size=100&id=648&format=png&color=000000"/></button>
     </div>
 </div>
 
@@ -68,6 +70,9 @@
 
 <!-- File upload script-->
 <script src="public/image-display.js"></script>
+
+<!-- Dark mode script -->
+<script src="public/display-mode.js"></script>
 
 </body>
 <footer>
