@@ -7,6 +7,7 @@ const densitySlider = document.getElementById("densitySetting");
 const speedSlider = document.getElementById("speedSetting");
 const sizeSlider = document.getElementById("sizeSetting");
 const colorSlider = document.getElementById("colorSetting");
+const opacitySlider = document.getElementById("opacitySetting");
 
 let baseImage = null;
 
@@ -29,6 +30,10 @@ sizeSlider.addEventListener('input', () => {
 
 colorSlider.addEventListener('input', () => {
     document.getElementById('colorValue').textContent = colorSlider.value + '%';
+});
+
+opacitySlider.addEventListener('input', () => {
+    document.getElementById('opacityValue').textContent = opacitySlider.value + '%';
 });
 
 upload.addEventListener("change", () => {
@@ -70,29 +75,34 @@ function simulateSnow() {
     let density = densitySlider.value / 100;
     let speed = 100 - speedSlider.value;
     let grainSize = Math.max(1, parseInt(sizeSlider.value));
-    let colorAmount = colorSlider.value / 100; // 0 = grayscale, 1 = full color
+    let colorAmount = colorSlider.value / 100;
+    let opacity = opacitySlider.value / 100;
 
     for (let y = 0; y < canvas.height; y += grainSize) {
         for (let x = 0; x < canvas.width; x += grainSize) {
             if (Math.random() < density) {
-                // Generate random RGB values
+
                 let r = Math.floor(Math.random() * 256);
                 let g = Math.floor(Math.random() * 256);
                 let b = Math.floor(Math.random() * 256);
 
                 let gray = (r + g + b) / 3;
 
-                let finalR = gray + (r - gray) * colorAmount;
-                let finalG = gray + (g - gray) * colorAmount;
-                let finalB = gray + (b - gray) * colorAmount;
+                let grainR = gray + (r - gray) * colorAmount;
+                let grainG = gray + (g - gray) * colorAmount;
+                let grainB = gray + (b - gray) * colorAmount;
 
                 for (let dy = 0; dy < grainSize && y + dy < canvas.height; dy++) {
                     for (let dx = 0; dx < grainSize && x + dx < canvas.width; dx++) {
                         let i = ((y + dy) * canvas.width + (x + dx)) * 4;
-                        data[i] = finalR;       // Red
-                        data[i + 1] = finalG;   // Green
-                        data[i + 2] = finalB;   // Blue
-                        // Alpha (data[i + 3]) remains unchanged
+
+                        let origR = data[i];
+                        let origG = data[i + 1];
+                        let origB = data[i + 2];
+
+                        data[i] = origR * (1 - opacity) + grainR * opacity;
+                        data[i + 1] = origG * (1 - opacity) + grainG * opacity;
+                        data[i + 2] = origB * (1 - opacity) + grainB * opacity;
                     }
                 }
             }

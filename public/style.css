@@ -2,18 +2,20 @@
     --blue: #2596be;
     --blue-green: #30c1bc;
     --green: #4cd79f;
+    --light-mode: #c0d3d1;
+    --dark-mode: #042524;
 }
 
 html {
     font-family: "Poppins", sans-serif;
-    background: white;
-    color: black;
+    background: var(--light-mode);
+    color: #000c0b;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .vs-title {
     text-align: center;
-    color: white;
+    color: var(--light-mode);
     background: linear-gradient(var(--blue), var(--green));
     padding: 1em;
     margin-left: -8px;
@@ -30,7 +32,7 @@ html {
 }
 
 .vs-info {
-    background: white;
+    background: var(--light-mode);
     margin: 0;
     padding: 1em;
     border-radius: 0.3em;
@@ -63,12 +65,12 @@ html {
 
 .vsi {
     text-decoration: none;
-    color: black;
+    color: #000c0b;
     transition: color 0.3s ease;
 }
 
 .dark-mode-background .vsi {
-    color: white;
+    color: var(--light-mode);
 }
 
 .vsi:hover {
@@ -91,15 +93,15 @@ footer p {
 }
 
 .dark-mode-text {
-    color: white;
+    color: var(--light-mode);
 }
 
 .dark-mode-title {
-    color: black;
+    color: #000c0b;
 }
 
 .dark-mode-background {
-    background: black;
+    background: #000c0b;
 }
 
 .display-button {
